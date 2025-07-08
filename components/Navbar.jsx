@@ -6,9 +6,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Products', href: '/products', dropdown: ['HR Cloud', 'IT Cloud', 'Finance Cloud'] },
-    { name: 'Platform', href: '/platform', dropdown:['']},
-    { name: 'Solutions', href: '/solutions', dropdown: ['Payroll', 'Benefits', 'Recruiting', 'Onboarding'] },
+    {
+      name: 'Products',
+      href: '/products',
+      // UPDATED: Links point to specific product sub-pages
+      dropdown: [
+        { name: 'HCM', href: '/products/hcm' },
+        { name: 'Payroll', href: '/products/payroll' },
+        { name: 'IT', href: '/products/it' },
+        { name: 'Spend', href: '/products/spend' },
+      ],
+    },
+    { name: 'Platform', href: '/platform', },
+    { name: 'Solutions', href: '/solutions',},
     { name: 'Global', href: '/global', dropdown: ['Global Payroll', 'Global HR', 'Global IT'] },
     { name: 'Resources', href: '/resources', dropdown: ['Blog', 'Case Studies', 'Webinars'] },
     { name: 'Pricing', href: '/pricing' },
@@ -52,20 +62,26 @@ const Navbar = () => {
                 )}
               </Link>
               {item.dropdown && (
-                // Dropdown menu should typically retain its dark background and white text,
-                // as it's a sub-menu, so no 'group-hover:text-black' here.
                 <div className="absolute left-0 mt-2 w-48 bg-[#4a2e37] border border-gray-700 rounded-md shadow-lg opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 z-10">
-                  {item.dropdown.map((dropItem) => (
-                    <Link
-                      key={dropItem}
-                      href={`${item.href}/${dropItem.toLowerCase().replace(/\s/g, '-')}`}
-                      className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                    >
-                      {dropItem}
-                    </Link>
-                  ))}
+                  {item.dropdown.map((dropItem) => {
+                    const name = typeof dropItem === 'string' ? dropItem : dropItem.name;
+                    const href = typeof dropItem === 'string'
+                      ? `${item.href}/${dropItem.toLowerCase().replace(/\s/g, '-')}`
+                      : dropItem.href;
+
+                    return (
+                      <Link
+                        key={name}
+                        href={href}
+                        className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                      >
+                        {name}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
+
             </div>
           ))}
 
@@ -147,17 +163,25 @@ const Navbar = () => {
               </Link>
               {item.dropdown && (
                 <div className="pl-6">
-                  {item.dropdown.map((dropItem) => (
-                    <Link
-                      key={dropItem}
-                      href={`${item.href}/${dropItem.toLowerCase().replace(/\s/g, '-')}`}
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
-                      {dropItem}
-                    </Link>
-                  ))}
+                  {item.dropdown.map((dropItem) => {
+                    const name = typeof dropItem === 'string' ? dropItem : dropItem.name;
+                    const href = typeof dropItem === 'string'
+                      ? `${item.href}/${dropItem.toLowerCase().replace(/\s/g, '-')}`
+                      : dropItem.href;
+
+                    return (
+                      <Link
+                        key={name}
+                        href={href}
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                      >
+                        {name}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
+
             </div>
           ))}
           <div className="px-4 py-2 flex items-center space-x-2 border-t border-gray-700 mt-2 pt-2">

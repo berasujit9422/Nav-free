@@ -112,7 +112,7 @@ export default function PlatformPage() {
             <Link href="#" className="flex items-center space-x-4 group">
               <div className="flex-shrink-0 w-24 h-16 bg-gray-300 rounded-md overflow-hidden">
                 <Image
-                  src="/images/video-thumb-1.png" // You'll need to add this image to public/images/
+                  src="/images/platform-secret-behind.png" // You'll need to add this image to public/images/
                   alt="Video Thumbnail"
                   width={96}
                   height={64}
@@ -130,7 +130,7 @@ export default function PlatformPage() {
             <Link href="#" className="flex items-center space-x-4 group">
               <div className="flex-shrink-0 w-24 h-16 bg-gray-300 rounded-md overflow-hidden">
                 <Image
-                  src="/images/video-thumb-2.png" // You'll need to add this image to public/images/
+                  src="/images/platform-for-a-seat-at-the-table.png" // You'll need to add this image to public/images/
                   alt="Video Thumbnail"
                   width={96}
                   height={64}
