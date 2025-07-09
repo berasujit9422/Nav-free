@@ -10,17 +10,17 @@ const Navbar = () => {
       name: 'Products',
       href: '/products',
       // UPDATED: Links point to specific product sub-pages
-      dropdown: [
-        { name: 'HCM', href: '/products/hcm' },
-        { name: 'Payroll', href: '/products/payroll' },
-        { name: 'IT', href: '/products/it' },
-        { name: 'Spend', href: '/products/spend' },
-      ],
+      // dropdown: [
+      //   { name: 'HCM', href: '/products/hcm' },
+      //   { name: 'Payroll', href: '/products/payroll' },
+      //   { name: 'IT', href: '/products/it' },
+      //   { name: 'Spend', href: '/products/spend' },
+      // ],
     },
     { name: 'Platform', href: '/platform', },
     { name: 'Solutions', href: '/solutions',},
-    { name: 'Global', href: '/global', dropdown: ['Global Payroll', 'Global HR', 'Global IT'] },
-    { name: 'Resources', href: '/resources', dropdown: ['Blog', 'Case Studies', 'Webinars'] },
+    { name: 'Global', href: '/global',},
+    { name: 'Resources', href: '/resources', },
     { name: 'Pricing', href: '/pricing' },
   ];
 

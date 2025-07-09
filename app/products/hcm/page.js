@@ -34,7 +34,7 @@ export default function HcmPage() {
             {/* HRIS */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <img src="https://rippling2.imgix.net/icon-hris.png" alt="HRIS Icon" className="h-10 w-10" />
+                <img src="/images/icon-hris.svg" alt="HRIS Icon" className="h-10 w-10" />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-[#4a2e37]">HRIS</h3>
